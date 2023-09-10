@@ -1,35 +1,33 @@
-<!DOCTYPE html >
-< html  lang =" es " >
-< cabeza >
-  < meta  juego de caracteres =" utf-8 " >
-  < título > </ título >
+<!DOCTYPE html>
+< html lang="es">
+< head>
+  <meta charset="utf-8">
+  <title></title>
 
-
-  </estilo> _ _
-</cabeza> _ _
-< cuerpo >
-  < guión >
-    constante AS_URL_BASE = "https://script.google.com/macros/s/AKfycbxmlUp0nn7ey-kBaW_jWqh--48KwHWNZUxLTM8acg178bWnocHVdVcGb9TqbMmGataTwA/exec";
+</head>  
+<body>
+  <script>
+    const AS_URL_BASE = "https://script.google.com/macros/s/AKfycbxmlUp0nn7ey-kBaW_jWqh--48KwHWNZUxLTM8acg178bWnocHVdVcGb9TqbMmGataTwA/exec";
     
-    var  URL = documento.ubicación.href ;
-    var  k = URL.substr(url.lastIndexOf ("k=")+2 );
+    var  URL = documento.ubicación.href;
+    var  k = URL.substr(url.lastIndexOf("k=")+2);
     
-    si ( k ) {
-      buscar (AS_URL_BASE +'?k='+k)
-      . entonces (r  => r.texto( ))
-      . entonces (( r ) => {
-        consola . Iniciar sesión (r);
-        //documento.write(r);
-        si (r) {
-          documento.ubicación.reemplazar(r);
+    if(k){
+      fetch(AS_URL_BASE +'?k='+k)
+      .then(r=>r.texto())
+      .then((r) => {
+        console.log(r);
+        //document.write(r);
+        if(r) {
+          document.location.replace(r);
         }
       } )
-      .captura(err => consola.log(err))
+      .catch(err => console.log(err))
     }
-  </ guión >
+  </script>
   
   
   
   
-</cuerpo> 
+</body> 
 </html> 
