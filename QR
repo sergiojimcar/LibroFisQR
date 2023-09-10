@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+< html lang="es">
+< head>
+  <meta charset="utf-8">
+  <title></title>
+
+</head>  
+<body>
+  <script>
+    const AS_URL_BASE = "https://script.google.com/macros/s/AKfycbxmlUp0nn7ey-kBaW_jWqh--48KwHWNZUxLTM8acg178bWnocHVdVcGb9TqbMmGataTwA/exec";
+    
+    var  URL = documento.ubicación.href;
+    var  k = URL.substr(url.lastIndexOf("k=")+2);
+    if(k){
+      fetch(AS_URL_BASE +'?k='+k)
+      .then(r=>r.texto())
+      .then((r) => {
+        console.log(r);
+        //document.write(r);
+        if(r) {
+          document.location.replace(r);
+        }
+      } )
+      .catch(err => console.log(err))
+    }
+  </script>
+  
+  
+</body> 
+</html> 
