@@ -3,73 +3,33 @@
 < cabeza >
   < meta  juego de caracteres =" utf-8 " >
   < título > </ título >
-  <estilo> _ _
-      cuerpo {
-        color de fondo : azul claro;
-        alineación de texto : centro;
-      }
-      
-      . anillo lds {
-  pantalla : bloque en línea;
-  posición : relativa;
-  ancho :  80 píxeles ;
-  altura :  80 píxeles ;
-}
-. lds-anillo  div {
-  tamaño de caja : cuadro de borde;
-  mostrar : bloquear;
-  posición : absoluta;
-  ancho :  64 píxeles ;
-  altura :  64 píxeles ;
-  margen :  8 píxeles ;
-  borde :  8 px sólido # fff ;
-  radio de borde :  50 % ;
-  animación : lds-ring 1,2 s  cúbico-bezier ( 0,5 ,  0 ,  0,5 ,  1 ) infinito;
-  color del borde :  # fff transparente transparente transparente;
-}
-. lds-ring  div : enésimo-niño ( 1 ) {
-  retardo de animación :  -0,45 s ;
-}
-. lds-ring  div : enésimo-niño ( 2 ) {
-  retardo de animación :  -0,3 s ;
-}
-. lds-ring  div : enésimo-niño ( 3 ) {
-  retardo de animación :  -0,15 s ;
-}
-@keyframes lds-anillo {
-  0 % {
-    transformar :  rotar ( 0 grados );
-  }
-  100 % {
-    transformar :  rotar ( 360 grados );
-  }
-}
+
+
   </estilo> _ _
 </cabeza> _ _
 < cuerpo >
   < guión >
-    constante  AS_URL_BASE  =  "https://script.google.com/macros/s/AKfycbxmlUp0nn7ey-kBaW_jWqh--48KwHWNZUxLTM8acg178bWnocHVdVcGb9TqbMmGataTwA/exec" ;
-    const  AS_URL_BASE  =  "https://script.google.com/macros/s/AKfycbxmlUp0nn7ey-kBaW_jWqh--48KwHWNZUxLTM8acg178bWnocHVdVcGb9TqbMmGataTwA/exec" ;
-
-    var  URL  =  documento . ubicación . href ;
-    var  k  =  URL . substr ( url . lastIndexOf ( "k=" ) + 2 ) ;
+    constante AS_URL_BASE = "https://script.google.com/macros/s/AKfycbxmlUp0nn7ey-kBaW_jWqh--48KwHWNZUxLTM8acg178bWnocHVdVcGb9TqbMmGataTwA/exec";
+    
+    var  URL = documento.ubicación.href ;
+    var  k = URL.substr(url.lastIndexOf ("k=")+2 );
     
     si ( k ) {
-      buscar ( AS_URL_BASE + '?k=' + k )
-      . entonces ( r  =>  r . texto ( ) )
-      . entonces ( ( r )  =>  {
-        consola . Iniciar sesión ( r ) ;
+      buscar (AS_URL_BASE +'?k='+k)
+      . entonces (r  => r.texto( ))
+      . entonces (( r ) => {
+        consola . Iniciar sesión (r);
         //documento.write(r);
-        si ( r ) {
-          documento . ubicación . reemplazar ( r ) ;
+        si (r) {
+          documento.ubicación.reemplazar(r);
         }
       } )
-      . captura ( err  =>  consola . log ( err ) )
+      .captura(err => consola.log(err))
     }
   </ guión >
   
-  < div  class =" lds-ring " > < div > </ div > < div > < / div > < div > < / div > < div > </ div > </ div >
   
   
-</cuerpo> _ _
-</html> _ _
+  
+</cuerpo> 
+</html> 
